@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Всеволод\Downloads\BlockNote-2S-seva\BlockNote-2S-seva\Notebook\build\CMakeFiles\98b8d8a7b22dc0dd114648b4d345815b\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{39384F88-47A8-361D-87EF-C4FBEDC95684}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

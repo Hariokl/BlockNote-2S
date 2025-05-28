@@ -17,8 +17,6 @@ public:
     void saveNote();
 
 private slots:
-    void onAddLine();
-    void onRemoveLine();
     void onSaveToFile();
     void onLoadFromFile();
     void updateContent();
@@ -27,8 +25,6 @@ private:
     Note* currentNote;
     QLineEdit* titleEdit;
     QTextEdit* contentEdit;
-    QPushButton* addButton;
-    QPushButton* removeButton;
     QPushButton* saveFileButton;
     QPushButton* loadFileButton;
 

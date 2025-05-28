@@ -1,0 +1,4 @@
+C:/Users/Всеволод/Downloads/BlockNote-2S-seva/BlockNote-2S-seva/Notebook/build/CMakeFiles/NoteApp.dir
+C:/Users/Всеволод/Downloads/BlockNote-2S-seva/BlockNote-2S-seva/Notebook/build/CMakeFiles/INSTALL.dir
+C:/Users/Всеволод/Downloads/BlockNote-2S-seva/BlockNote-2S-seva/Notebook/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Всеволод/Downloads/BlockNote-2S-seva/BlockNote-2S-seva/Notebook/build/CMakeFiles/ZERO_CHECK.dir

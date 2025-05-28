@@ -11,7 +11,7 @@ void NoteWidget::setupUI() {
 
     // Title section
     QHBoxLayout* titleLayout = new QHBoxLayout();
-    titleLayout->addWidget(new QLabel("Title:", this));
+    titleLayout->addWidget(new QLabel("Название:", this));
     titleEdit = new QLineEdit(this);
     titleLayout->addWidget(titleEdit);
     mainLayout->addLayout(titleLayout);
@@ -22,13 +22,9 @@ void NoteWidget::setupUI() {
 
     // Buttons
     QHBoxLayout* buttonLayout = new QHBoxLayout();
-    addButton = new QPushButton("Add Line", this);
-    removeButton = new QPushButton("Remove Line", this);
-    saveFileButton = new QPushButton("Save to File", this);
-    loadFileButton = new QPushButton("Load from File", this);
+    saveFileButton = new QPushButton("Сохранить файл", this);
+    loadFileButton = new QPushButton("Открыть файл", this);
 
-    buttonLayout->addWidget(addButton);
-    buttonLayout->addWidget(removeButton);
     buttonLayout->addWidget(saveFileButton);
     buttonLayout->addWidget(loadFileButton);
     mainLayout->addLayout(buttonLayout);
@@ -36,8 +32,6 @@ void NoteWidget::setupUI() {
     // Connections
     connect(titleEdit, &QLineEdit::textEdited, this, &NoteWidget::updateContent);
     connect(contentEdit, &QTextEdit::textChanged, this, &NoteWidget::updateContent);
-    connect(addButton, &QPushButton::clicked, this, &NoteWidget::onAddLine);
-    connect(removeButton, &QPushButton::clicked, this, &NoteWidget::onRemoveLine);
     connect(saveFileButton, &QPushButton::clicked, this, &NoteWidget::onSaveToFile);
     connect(loadFileButton, &QPushButton::clicked, this, &NoteWidget::onLoadFromFile);
 }
@@ -51,9 +45,9 @@ void NoteWidget::updateUI() {
     if (!currentNote) return;
 
     titleEdit->setText(currentNote->getTitle());
-    
+
     QString content;
-    for (const auto& line : currentNote->getLines()) {
+    for (auto& line : currentNote->getLines()) {
         content += line + "\n";
     }
     contentEdit->setPlainText(content);
@@ -68,25 +62,14 @@ void NoteWidget::updateContent() {
     if (!currentNote) return;
 
     currentNote->setTitle(titleEdit->text());
-    
+
     QStringList lines = contentEdit->toPlainText().split("\n");
-    currentNote->getLines().clear();
-    for (const QString& line : lines) {
+    // currentNote->getLines().clear();
+    for (QString& line : lines) {
         currentNote->addLine(line);
     }
 }
 
-void NoteWidget::onAddLine() {
-    if (!currentNote) return;
-    currentNote->addLine("");
-    updateUI();
-}
-
-void NoteWidget::onRemoveLine() {
-    if (!currentNote || currentNote->getLines().empty()) return;
-    currentNote->removeLine(currentNote->getLines().size() - 1);
-    updateUI();
-}
 
 void NoteWidget::onSaveToFile() {
     if (!currentNote) return;

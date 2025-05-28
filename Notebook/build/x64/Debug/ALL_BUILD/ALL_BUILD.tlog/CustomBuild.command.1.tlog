@@ -1,0 +1,10 @@
+^C:\USERS\ВСЕВОЛОД\DOWNLOADS\BLOCKNOTE-2S-SEVA\BLOCKNOTE-2S-SEVA\NOTEBOOK\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Всеволод/Downloads/BlockNote-2S-seva/BlockNote-2S-seva/Notebook -BC:/Users/Всеволод/Downloads/BlockNote-2S-seva/BlockNote-2S-seva/Notebook/build --check-stamp-file C:/Users/Всеволод/Downloads/BlockNote-2S-seva/BlockNote-2S-seva/Notebook/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

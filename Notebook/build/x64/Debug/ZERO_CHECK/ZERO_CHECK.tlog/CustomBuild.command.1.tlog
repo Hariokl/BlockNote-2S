@@ -1,0 +1,10 @@
+^C:\USERS\ВСЕВОЛОД\DOWNLOADS\BLOCKNOTE-2S-SEVA\BLOCKNOTE-2S-SEVA\NOTEBOOK\BUILD\CMAKEFILES\98B8D8A7B22DC0DD114648B4D345815B\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Всеволод/Downloads/BlockNote-2S-seva/BlockNote-2S-seva/Notebook -BC:/Users/Всеволод/Downloads/BlockNote-2S-seva/BlockNote-2S-seva/Notebook/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Всеволод/Downloads/BlockNote-2S-seva/BlockNote-2S-seva/Notebook/build/NoteApp.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
